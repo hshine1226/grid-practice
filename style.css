@@ -1,32 +1,31 @@
 .grid {
   display: grid;
-  gap: 10px;
-  /*라인의 이름을 지정해줄 수 있다.*/
-  grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px;
-  /*repeat 안에서도 이름을 지정해 줄 수 있다.
-  모든 라인 이름이 sexy-line으로 지정된다.*/
-  grid-template-rows: repeat(4, 100px [sexy-line]);
+  gap: 5px;
+  /* row의 1fr을 지정해주려면 높이가 필요하다.
+  50vh -> 화면의 절반을 높이로 지정한다.*/
+  height: 50vh;
+
+  /* fr(fraction)은 유연한 크기를 갖는 단위이다.
+   "" 좌측에 적은 값은 높이, 마지막 / 뒤에 적은 값은 폭이다.
+   각각에 대해 naming도 사용할 수 있다.*/
+  grid-template:
+    "header header header header" 1fr
+    "content content content nav" 2fr
+    "footer footer footer footer" 1fr / 1fr 1fr 1fr 1fr;
 }
 .header {
   background: #55efc4;
-  /*grid-column-start와 grid-column-end를 한 줄에 처리하는 방법 
-  처음부터 끝까지 쓸 때, line 수를 세지 말고
-  마지막 라인은 -1로 대체 가능하다.
-  뒤에서부터 line을 셀 때는 -1, -2, -3 이런 식으로 센다.*/
-  grid-column: span 4;
+  grid-area: header;
 }
 .content {
   background: #74b9ff;
-  grid-column: first-line/fourth-line;
-  grid-row: sexy-line 1 / sexy-line 3;
+  grid-area: content;
 }
 .nav {
   background: #a29bfe;
-  grid-row: span 2;
+  grid-area: nav;
 }
 .footer {
   background: #ff7675;
-  /*span은 얼마나 많은 cell을 가지고 있는지 지정하는 함수이다.
-  4개의 셀을 가지고 있다고 지정 span 4*/
-  grid-column: span 4;
+  grid-area: footer;
 }
