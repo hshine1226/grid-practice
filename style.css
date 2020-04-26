@@ -7,25 +7,24 @@
 }
 .header {
   background: #55efc4;
-  /*column 번호에서 시작하는 것이 아니라
-  line 번호에서 시작한다.*/
-  grid-column-start: 1;
-  grid-column-end: 5;
+  /*grid-column-start와 grid-column-end를 한 줄에 처리하는 방법 
+  처음부터 끝까지 쓸 때, line 수를 세지 말고
+  마지막 라인은 -1로 대체 가능하다.
+  뒤에서부터 line을 셀 때는 -1, -2, -3 이런 식으로 센다.*/
+  grid-column: span 4;
 }
 .content {
   background: #74b9ff;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 4;
+  grid-column: 1/-2;
+  grid-row: span 2;
 }
 .nav {
   background: #a29bfe;
-  grid-row-start: 2;
-  grid-row-end: 4;
+  grid-row: span 2;
 }
 .footer {
   background: #ff7675;
-  grid-column-start: 1;
-  grid-column-end: 5;
+  /*span은 얼마나 많은 cell을 가지고 있는지 지정하는 함수이다.
+  4개의 셀을 가지고 있다고 지정 span 4*/
+  grid-column: span 4;
 }
