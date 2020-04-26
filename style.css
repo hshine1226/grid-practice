@@ -1,14 +1,16 @@
 .grid {
+  background: peru;
+  color: white;
   display: grid;
   gap: 5px;
   /* row의 1fr을 지정해주려면 높이가 필요하다.
   50vh -> 화면의 절반을 높이로 지정한다.*/
   height: 50vh;
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-columns: repeat(4, 1fr);
-  /* grid의 justify-items과 align-items의 기본값은 strech이다. */
-  /* place-items는 align-items와 justify-items를 한 번에 쓰게 해주는 shortcut이다. */
-  align-items: stretch;
+  grid-template-rows: repeat(4, 100px);
+  grid-template-columns: repeat(4, 100px);
+  justify-content: center;
+  align-content: center;
+  place-content: end center;
 }
 .header {
   background: #55efc4;
