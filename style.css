@@ -1,0 +1,23 @@
+.father {
+  display: grid;
+  /* column의 각각의 크기를 지정한다.
+  3개의 column을 가지고, 각각 250px의 크기를 가진다.*/
+  grid-template-columns: 250px 250px 250px;
+  /* row의 크기를 정한다.*/
+  grid-template-rows: 100px 50px 300px;
+  /* column 사이의 간격을 정한다.*/
+  column-gap: 20px;
+  /* row 사이의 간격을 정한다.*/
+  row-gap: 20px;
+  /* row와 column 사이의 간격을 한 번에 정한다.*/
+  gap: 20px;
+}
+
+.child {
+  background: peru;
+  color: white;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
