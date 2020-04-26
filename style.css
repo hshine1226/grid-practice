@@ -4,28 +4,21 @@
   /* row의 1fr을 지정해주려면 높이가 필요하다.
   50vh -> 화면의 절반을 높이로 지정한다.*/
   height: 50vh;
-
-  /* fr(fraction)은 유연한 크기를 갖는 단위이다.
-   "" 좌측에 적은 값은 높이, 마지막 / 뒤에 적은 값은 폭이다.
-   각각에 대해 naming도 사용할 수 있다.*/
-  grid-template:
-    "header header header header" 1fr
-    "content content content nav" 2fr
-    "footer footer footer footer" 1fr / 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  /* grid의 justify-items과 align-items의 기본값은 strech이다. */
+  /* place-items는 align-items와 justify-items를 한 번에 쓰게 해주는 shortcut이다. */
+  align-items: stretch;
 }
 .header {
   background: #55efc4;
-  grid-area: header;
 }
 .content {
   background: #74b9ff;
-  grid-area: content;
 }
 .nav {
   background: #a29bfe;
-  grid-area: nav;
 }
 .footer {
   background: #ff7675;
-  grid-area: footer;
 }
