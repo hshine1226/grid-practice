@@ -1,9 +1,11 @@
 .grid {
   display: grid;
   gap: 10px;
-  /* css 함수인 repeat을 사용하면 더 보기 좋게 코드를 짤 수 있다.*/
-  grid-template-columns: repeat(4, 100px);
-  grid-template-rows: repeat(4, 100px);
+  /*라인의 이름을 지정해줄 수 있다.*/
+  grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px;
+  /*repeat 안에서도 이름을 지정해 줄 수 있다.
+  모든 라인 이름이 sexy-line으로 지정된다.*/
+  grid-template-rows: repeat(4, 100px [sexy-line]);
 }
 .header {
   background: #55efc4;
@@ -15,8 +17,8 @@
 }
 .content {
   background: #74b9ff;
-  grid-column: 1/-2;
-  grid-row: span 2;
+  grid-column: first-line/fourth-line;
+  grid-row: sexy-line 1 / sexy-line 3;
 }
 .nav {
   background: #a29bfe;
