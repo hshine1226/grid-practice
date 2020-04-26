@@ -4,10 +4,9 @@
   display: grid;
   gap: 5px;
   height: 150vh;
-  grid-template-columns: repeat(4, 100px);
+  /* minmax는 최소 값과 최대 값을 한 번에 지정해줄 수 있다.*/
+  grid-template-columns: repeat(10, minmax(100px, 1fr));
   grid-template-rows: repeat(4, 100px);
-  /* grid-auto-flow는 마치 flex-direction 같은 역할을 한다. */
-  grid-auto-flow: column;
   /* grid-auto-columns를 사용하기 위해서는 
   grid-auto-flow로 먼저 column으로 바꾸어 주어야한다. */
   grid-auto-columns: 100px;
